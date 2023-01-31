@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "finalSI"
+  "cli": {
+    "analytics": "36f24d20-8d15-4a5c-94b8-cb8d397b6705"
+  }
 }
