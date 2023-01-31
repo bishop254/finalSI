@@ -1,0 +1,70 @@
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+    >
+      <mat-card class="dashboard-card" *ngIf="card.content == 'Welcome'">
+        <mat-card-header>
+          <mat-card-title>
+            WELCOME TO U53R5:ALBUM5
+            <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="../../../assets/landing1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p id="description">
+            Discover the ultimate music community where fans and artists come
+            together. Explore thousands of user-generated album reviews and
+            ratings, share your own experiences and connect with fellow music
+            lovers. Join the conversation and keep up with the latest album
+            releases, all in one place."
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card
+        class="dashboard-card other-card"
+        *ngIf="card.content == 'Login'"
+      >
+        <mat-card-content class="dashboard-card-content">
+          <img
+            id="login-img"
+            mat-card-image
+            src="../../../assets/login1.jpg"
+            alt="Photo of a Shiba Inu"
+          />
+          <app-login class="login-card"></app-login>
+        </mat-card-content>
+      </mat-card>
+      <mat-card
+        class="dashboard-card other-card"
+        *ngIf="card.content == 'Logs'"
+      >
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
