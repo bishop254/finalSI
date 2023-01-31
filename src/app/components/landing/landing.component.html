@@ -38,17 +38,20 @@
           </p>
         </mat-card-content>
       </mat-card>
-      <!-- <mat-card class="dashboard-card other-card"> -->
-      <app-login class="login-card" *ngIf="card.content == 'Login'"></app-login>
-      <!-- <mat-card-header>
-          <mat-card-title>
-            {{ card.title }}
-          </mat-card-title>
-        </mat-card-header>
+      <mat-card
+        class="dashboard-card other-card"
+        *ngIf="card.content == 'Login'"
+      >
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-        </mat-card-content> -->
-      <!-- </mat-card> -->
+          <img
+            id="login-img"
+            mat-card-image
+            src="../../../assets/login1.jpg"
+            alt="Photo of a Shiba Inu"
+          />
+          <app-login class="login-card"></app-login>
+        </mat-card-content>
+      </mat-card>
       <mat-card
         class="dashboard-card other-card"
         *ngIf="card.content == 'Logs'"
