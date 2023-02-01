@@ -20,13 +20,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { UsersComponent } from './components/users/users.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
