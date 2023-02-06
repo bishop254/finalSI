@@ -30,7 +30,6 @@ export class AuthService {
         .auth()
         .signInWithEmailAndPassword(email, password);
 
-      console.log(loginAction.user?.providerData[0]);
       this.router.navigate(['/users']);
 
       this.snackBar.open('Login Success', 'Success', {
@@ -54,8 +53,6 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('userData')!);
-    console.log(user);
-
     return user !== null ? true : false;
   }
 
