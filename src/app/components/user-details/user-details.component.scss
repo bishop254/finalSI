@@ -1,0 +1,27 @@
+.user-details-card {
+  max-width: 80%;
+  margin: 10px auto;
+  text-align: right;
+
+  .mat-card-header {
+    text-align: left;
+  }
+}
+
+.user-albums-list {
+  width: 70%;
+  margin: 15px auto;
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 8px;
+
+  .album-list {
+    cursor: pointer;
+    transition: 1s all ease-out;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+}
