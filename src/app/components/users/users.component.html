@@ -1,22 +1,47 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
+  <h1 class="mat-h1">Users</h1>
+  <mat-grid-list cols="3" rowHeight="330px">
+    <mat-grid-tile
+      *ngFor="let user of users | async"
+      [colspan]="3"
+      [rowspan]="1"
+    >
+      <mat-card class="dashboard-card" (click)="userDetails(user.id)">
         <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
+          <!-- <div mat-card-avatar class="example-header-image">
+            <img
+              mat-card-image
+              src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+              alt="Photo of a Shiba Inu"
+            />
+          </div> -->
+          <mat-card-title>{{ user.name }}</mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content>
+          <p>
+            <!-- <mat-icon>mail</mat-icon> -->
+            <strong>Nickname:</strong><br />
+            {{ user.username }}
+          </p>
+          <p>
+            <!-- <mat-icon>mail</mat-icon> -->
+            <strong>Email:</strong><br />
+            {{ user.email }}
+          </p>
+          <p>
+            <!-- <mat-icon>mail</mat-icon> -->
+            <strong>Phone:</strong><br />
+            {{ user.phone }}
+          </p>
+          <p>
+            <!-- <mat-icon>mail</mat-icon> -->
+            <strong>Website:</strong><br />
+            {{ user.website }}
+          </p>
+          <p>
+            <!-- <mat-icon>mail</mat-icon> -->
+            <strong>Album Count:</strong>{{user.albCnt ||10 }}
+          </p>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
