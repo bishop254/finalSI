@@ -23,6 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { UsersComponent } from './components/users/users.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { AlbumDetailsComponent } from './components/album-details/album-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NavComponent,
     LoginComponent,
     UsersComponent,
+    UserDetailsComponent,
+    AlbumDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatRadioModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
