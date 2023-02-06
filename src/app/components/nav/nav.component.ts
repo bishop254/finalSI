@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-nav',
@@ -19,10 +20,16 @@ export class NavComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public auth: AuthService
+    public auth: AuthService,
+    private snackBar: MatSnackBar
   ) {}
 
   logout() {
-    this.auth.logout();
+    this.snackBar.open('Logging out', 'Logout Status', {
+      duration: 1 * 1000,
+    });
+    setTimeout(() => {
+      this.auth.logout();
+    }, 1.5);
   }
 }
