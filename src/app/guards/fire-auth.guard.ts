@@ -32,7 +32,8 @@ export class FireAuthGuard implements CanActivate {
       this.router.navigate(['landing']);
       this.snackBar.open(
         'You are not authorized to view this page',
-        'Auth Error'
+        'Auth Error',
+        { duration: 2 * 1000 }
       );
     }
     return true;
