@@ -26,7 +26,7 @@ export class NavComponent {
 
   logout() {
     this.snackBar.open('Logging out', 'Logout Status', {
-      duration: 1 * 1000,
+      duration: 2 * 1000,
     });
     setTimeout(() => {
       this.auth.logout();
