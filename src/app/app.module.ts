@@ -20,13 +20,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { UsersComponent } from './components/users/users.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { AlbumDetailsComponent } from './components/album-details/album-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    AlbumDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +53,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
