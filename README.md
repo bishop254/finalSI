@@ -1,3 +1,6 @@
+# Walkthrough 
+Final Site - [[http://mysitest.s3-website-sa-east-1.amazonaws.com/]]
+
 1. We begin by creating a new Angular Project using the command below:
    ```bash
    ng new finalSI
